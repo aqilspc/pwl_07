@@ -40,6 +40,14 @@ Jurusan
 <label for="No_Handphone">No_Handphone</label>
 <input type="No_Handphone"name="no_handphone"class="form-control"id="No_Handphone"aria-describedby="No_Handphone">
 </div>
+<div class="form-group">
+<label for="No_Handphone">Email</label>
+<input type="email"name="email"class="form-control"id="No_Handphone"aria-describedby="No_Handphone">
+</div>
+<div class="form-group">
+<label for="No_Handphone">Tgl Lahir</label>
+<input type="date"name="tanggal_lahir"class="form-control"id="No_Handphone"aria-describedby="No_Handphone">
+</div>
 <button type="submit"class="btn btn-primary">Submit
 </button>
 </form>

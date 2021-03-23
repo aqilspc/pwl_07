@@ -15,8 +15,8 @@ class MahasiswaController extends Controller
     {
         $mahasiswa=Mahasiswa::all(); 
         // Mengambil semua isi tabel
-        $posts=Mahasiswa::orderBy('nim','desc')->paginate(6);
-        return view('mahasiswa.index',compact('mahasiswa'))->with('i',(request()->input('page',1)-1)*5);
+        $posts=Mahasiswa::orderBy('nim','desc')->paginate(1);
+        return view('mahasiswa.index',compact('mahasiswa','posts'))->with('i',(request()->input('page',1)-1)*5);
     }
 
     /**
@@ -41,7 +41,9 @@ class MahasiswaController extends Controller
         ,'nama'=>'required'
         ,'kelas'=>'required'
         ,'jurusan'=>'required'
-        ,'no_handphone'=>'required',
+        ,'no_handphone'=>'required'
+        ,'email'=>'required'
+        ,'tanggal_lahir'=>'required'
         ]);//fungsieloquentuntukmenambahdata
         Mahasiswa::create($request->all());
         //jikadataberhasilditambahkan,akankembalikehalamanutama
@@ -85,7 +87,9 @@ class MahasiswaController extends Controller
         ,'nama'=>'required'
         ,'kelas'=>'required'
         ,'jurusan'=>'required'
-        ,'no_handphone'=>'required',
+        ,'no_handphone'=>'required'
+         ,'email'=>'required'
+        ,'tanggal_lahir'=>'required'
         ]);
         Mahasiswa::find($nim)->update($request->all());
         return redirect()->route('mahasiswa.index')->with('success','Mahasiswa Berhasil Diupdate');
@@ -102,4 +106,10 @@ class MahasiswaController extends Controller
         Mahasiswa::find($nim)->delete();
         return redirect()->route('mahasiswa.index')->with('success','Mahasiswa Berhasil  Dihapus');
     }
+
+    // public function search(Request $request)
+    // {
+    //     $mahasiswa=Mahasiswa::find($request->nim);
+    //     return view('mahasiswa.cari',compact('mahasiswa'));
+    // }
 }

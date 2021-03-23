@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\CariController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('mahasiswa',MahasiswaController::class);
+Route::post('cari',[CariController::class,'search']);
