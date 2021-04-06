@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('mahasiswa',MahasiswaController::class);
-Route::post('cari',[CariController::class,'search']);
+Route::get('nilai/{nim}',[MahasiswaController::class,'nilai']);
