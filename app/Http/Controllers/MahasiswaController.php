@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use App\Models\Kelas;
 class MahasiswaController extends Controller
 {
     /**
@@ -26,7 +27,8 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        return view('mahasiswa.create');
+        $kelas = Kelas::all();
+        return view('mahasiswa.create',compact('kelas'));
     }
 
     /**
@@ -71,7 +73,8 @@ class MahasiswaController extends Controller
     public function edit($nim)
     {
         $mahasiswa=Mahasiswa::find($nim);
-        return view('mahasiswa.edit',compact('mahasiswa'));
+         $kelas = Kelas::all();
+        return view('mahasiswa.edit',compact('mahasiswa','kelas'));
     }
 
     /**
