@@ -46,19 +46,23 @@ cari
 	<td>{{$index + $posts->firstItem()}}</td>
 	<td>{{$mahasiswa->nim}}</td>
 	<td>{{$mahasiswa->nama}}</td>
-	<td>{{$mahasiswa->kelas}}</td>
+	<td>{{$mahasiswa->kelas->nama_kelas}}</td>
 	<td>{{$mahasiswa->jurusan}}</td>
 	<td>{{$mahasiswa->no_handphone}}</td>
 	<td>{{$mahasiswa->email}}</td>
 	<td>{{$mahasiswa->tanggal_lahir}}</td>
 	<td>
+		
 		<form action="{{route('mahasiswa.destroy',['mahasiswa'=>$mahasiswa->nim])}}"method="POST">
+
 		<a class="btn btn-info"href="{{route('mahasiswa.show',['mahasiswa'=>$mahasiswa->nim])}}">Show</a>
+
 		<a class="btn btn-primary"href="{{route('mahasiswa.edit',['mahasiswa'=>$mahasiswa->nim])}}">Edit</a>
 		@csrf
 		@method('DELETE')
 		<button type="submit"class="btn btn-danger">Delete</button>
 	</form>
+
 </td>
 </tr>
 @endforeach
