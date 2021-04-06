@@ -41,7 +41,7 @@ class MahasiswaController extends Controller
     {
         $request->validate(['nim'=>'required'
         ,'nama'=>'required'
-        ,'kelas'=>'required'
+        ,'kelas_id'=>'required'
         ,'jurusan'=>'required'
         ,'no_handphone'=>'required'
         ,'email'=>'required'
@@ -88,7 +88,7 @@ class MahasiswaController extends Controller
     {
         $request->validate(['nim'=>'required'
         ,'nama'=>'required'
-        ,'kelas'=>'required'
+        ,'kelas_id'=>'required'
         ,'jurusan'=>'required'
         ,'no_handphone'=>'required'
          ,'email'=>'required'
